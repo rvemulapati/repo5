@@ -1,0 +1,10 @@
+---
+ - hosts: 192.168.56.10
+   tasks:
+    - name: software
+      apt: name=software-properties-common
+    - name: addrepository
+      apt_repository:
+        repo: ppa:ansible/ansible
+    - name: ansible
+      apt: name=ansible state=present
